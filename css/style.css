@@ -145,12 +145,44 @@ main {
     }
 
     #producto article button {
-       min-height: 100px;
+       min-height: 50px;
        margin-bottom: 20px;
-
-    
     }
 
+#formulario{
+    margin-top: 50px;
+    width: 1200px;
+    min-height: 50px;
+    display: flex;
+}
+#formulario  .mb-3 label{
+  margin: 20px;
+}
+#formulario input{
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+}
+
+#formulario button{
+    width: 100px;
+    height: 50px;
+    margin: 40px;
+}
+#formulario h1{
+    width: 300px;
+    margin: 50px;
+    color: #f00f0f;
+}
+#tablaProductos{
+    margin-top: 20px;
+    width: 400px;
+    min-height: 50px; 
+}
+#tablaProductos td{
+    width: 200px;
+    color: #1a1818;
+}
 
 
 /* ## sección contacto ## */
