@@ -127,47 +127,78 @@ main {
     }
 
    
+#categorias{
+
+}
 
     #producto {
-        mix-blend-mode: 100px;
+        max-width: 1000px;
         display: flex;
         justify-content: space-evenly;
+        /* mix-blend-mode: 100px; */
         flex-wrap: wrap;
-        margin: 20px 0px 0px 0px;
-
+        margin:auto;
+        border: #323232 solid 2px;
+        border-radius: 20px;
+        /* background-color: #5a0f0f; */
+        background: rgb(215,143,183);
+        background: linear-gradient(90deg, rgba(215,143,183,1) 0%, rgba(201,185,241,1) 100%);
+    }
+    #producto article{
+        width: 300px;
+        padding: 20px;
+        border: #323232 solid 4px;
+        margin: 20px 0px 20px 0px;
+        text-align: center;
+        border: #323232 solid 2px;
+        border-radius: 20px;
+        /* margin: 40px;*/
     }
     #producto article p {
-       margin-top: 10px;
+        display: flex;
+        color: #1a1818;
+        justify-content: space-around;
     }
-    #producto article h3 {
-        text-align: center;
-        vertical-align: middle;
-    }
+   
 
     #producto article button {
-       min-height: 50px;
-       margin-bottom: 20px;
+        margin-top: 20px;
+        min-height: 40px;
+        padding: 10px;
     }
+
+#fortable{
+   
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
 
 #formulario{
     margin-top: 50px;
-    width: 1200px;
     min-height: 50px;
-    display: flex;
+    width: 340px;
+    margin: 40px 0px 40px 100px;
+    border: #323232 solid 2px;
+    border-radius: 20px;
+    background: rgb(215,143,183);
+    color: #1a1818;
+    background: linear-gradient(90deg, rgba(215,143,183,1) 0%, rgba(201,185,241,1) 100%);
+
 }
 #formulario  .mb-3 label{
-  margin: 20px;
+    margin: 0px 0px 0px 20px;
 }
 #formulario input{
-    width: 100px;
+    width: 300px;
     height: 50px;
     margin: 20px;
 }
 
 #formulario button{
-    width: 100px;
+    width: 300px;
     height: 50px;
-    margin: 40px;
+    margin: 20px;
 }
 #formulario h1{
     width: 300px;
@@ -176,8 +207,10 @@ main {
 }
 #tablaProductos{
     margin-top: 20px;
-    width: 400px;
+    width: 600px;
     min-height: 50px; 
+    display: inline-block;
+    margin: 40px 40px 0px 80px;
 }
 #tablaProductos td{
     width: 200px;
