@@ -56,8 +56,9 @@
             </select>
          <!-- <section id="producto"> -->
              
-        <section id="producto"> 
-            <article>
+        <section id="selecionar-producto"> 
+
+            <!-- <article>
                 <p>id:100</p>
                 <h3>producto:Sportswear</h3>
                 <p>precio: 110</p>
@@ -119,8 +120,9 @@
                 <p>precio: 170</p>
                 <p>categoria: deportivo</p>
                 <button>agrerar al carro</button>
-            </article>
+            </article> -->
         </section> 
+      
         <section id="fortable">
             <form id="formulario">
                 <div class="mb-3">
@@ -139,14 +141,14 @@
                     <label class="form-label">Cantidad</label>
                     <input id="cantidad" class="form-control" type="text" placeholder="Ingresa la cantidad">
                 </div>
-                <!-- <div class="mb-3">
+                 <div class="mb-3">
                     <label class="form-label">selecionar</label>
                     <select name="" id="select">
                         <option value="">argentina</option>
                         <option value="">brasil</option>
                         <option value="">chile</option>
                     </select>
-                </div> -->
+                </div> 
                 <div class="button-carro">
                     <button type="submit" class="btn btn-primary">añadir</button>
                 </div>
@@ -163,17 +165,20 @@
                             <td>Precio compra</td>
                             <td>color</td>
                             <td>Cantidad</td>
+                            <td>borrar</td>
+
                         </tr>
                         </th>
                         
-                        <tbody class="tabla">
+                        <tbody id="tablaxl-Productos">
                           
                         </tbody>
                         
                 </table>
 
             </div>
-        </section>
+           
+        </section> 
     </main>
     <div id="bottom">
         <footer>
@@ -199,7 +204,10 @@
             </div>
         </footer>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="js/main.js"></script>
+
 </body>
 </html>
     
