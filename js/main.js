@@ -75,13 +75,40 @@ let ropa = [
     {id:104, nombre:"couture t-shit",precio:122},
     ];
 
+// let color = [
+//     {red:"red", },
+//     {verde:"verde",},
+//     {azul:"azul"},
+//     {violeta:"violeta"},
+//     {amarrillo:"amarrillo"},
+//     {negro:"negro"},
+//     ];
 
-
-function meterAlCarro(ObjetoProducto){
-    //console.log(productosEnCarro)
-   productosEnCarro.push(ObjetoProducto);
-   localStorage.setItem("productosEnCarro", JSON.stringify(productosEnCarro));
-   agregarProductosTabla();
+  // function selecionarColor(){
+    //     let aux = "";
+    //     for(let i=0;i<color.length;i++){
+    //         aux =
+    //         aux +
+    //         `
+    //         <article  style= " border: 1px solid red">
+    //         <button id="" onclick="({id: ${color[i].red}})">${red}</button>
+    //         <button id="" onclick="({id: ${color[i].verde}})">${verde}</button>
+    //         <button id="" onclick="({id: ${color[i].amarrillo}})">${amarrillo}</button>
+    //         <button id="" onclick="({id: ${color[i].azul}})">${azul}</button>
+    //         <button id="" onclick="({id: ${color[i].violeta}})">${violeta}</button>
+    //         <button id="" onclick="({id: ${color[i].negro}})">${negro}</button>
+    //         </article>
+    //         `;
+    //     }
+    //     // console.log(aux);
+    //     document.getElementById("selecionar-color").innerHTML = aux;
+    // }
+    
+    function meterAlCarro(ObjetoProducto){
+        //console.log(productosEnCarro)
+        productosEnCarro.push(ObjetoProducto);
+        localStorage.setItem("productosEnCarro", JSON.stringify(productosEnCarro));
+        agregarProductosTabla();
 }
 function borrarDelCarro(id){
     //productosEnCarro.filter((item => item.id != id));
@@ -112,42 +139,47 @@ pintarListado()
 
 
 let aux = localStorage.getItem("productosEnCarro");
-if (!aux) {
-    productosEnCarro = [];
-}else{
-   productosEnCarro = JSON.parse(aux.toString())
-   agregarProductosTabla()
-}
 
-function agregarProductosTabla() {
-    let aux = "";
-    for(let i=0;i<productosEnCarro.length;i++){
-        aux =
-        aux +`
-        <tr style="border: 1px solid green">
-     
-        <td>${productosEnCarro[i].nombre}</td>
-        <td>$: ${productosEnCarro[i].precio}</td>
-        <td>id: ${productosEnCarro[i].id}</td>
-        <td>id: ${productosEnCarro[i].id}</td>
-        <td><button id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</button></td>
-        </tr>
-        `;
+productosEnCarro = (JSON.parse(aux.toString()) || [])
+agregarProductosTabla()
+
+// if (!aux) {
+//     productosEnCarro = [];
+// }else{
+    //    productosEnCarro = JSON.parse(aux.toString())
+    //    agregarProductosTabla()
+    // }
+    
+    function agregarProductosTabla() {
+        let aux = "";
+        for(let i=0;i<productosEnCarro.length;i++){
+            aux =
+            aux +`
+            <tr style="border: 1px solid green">
+            
+            <td>${productosEnCarro[i].nombre}</td>
+            <td>$: ${productosEnCarro[i].precio}</td>
+            <td>id: ${productosEnCarro[i].id}</td>
+            <td>id: ${productosEnCarro[i].id}</td>
+            <td><button id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</button></td>
+            </tr>
+            `;
+        }
+        document.getElementById("tablaxl-Productos").innerHTML = aux;
     }
-    document.getElementById("tablaxl-Productos").innerHTML = aux;
-}
-     
-//------------------------------------------------------------------------------
+    
+    selecionarColor()
+    //------------------------------------------------------------------------------
 
 // const btn = document.querySelector("#meterAlCarro")
 // btn.addEventListener('click', () => {
-//     Swal.fire({
-//         title: 'Genial!',
-//         text: 'Agregaste un producto al carro!',
-//         icon: 'success',
-//         confirmButtonText: 'Cool'
-// })
-// });
+    //     Swal.fire({
+        //         title: 'Genial!',
+        //         text: 'Agregaste un producto al carro!',
+        //         icon: 'success',
+        //         confirmButtonText: 'Cool'
+        // })
+        // });
 
 
 // const btn2 = document.querySelector('#borrarDelCarro')
