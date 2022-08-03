@@ -54,7 +54,7 @@ function limpiarTabla() {
 
 function agregarProductosTabla() {
     productos.forEach(element => {
-        let tabla = document.querySelector(".tabla")
+        let tabla = document.querySelector("#selecionar-producto")
         let filaTabla = document.createElement("tr")
         filaTabla.innerHTML=`
         <td>${element.nombre}</td>
@@ -65,23 +65,7 @@ function agregarProductosTabla() {
         tabla.append(filaTabla)
     });
 }
-
-// function pintarCarro(){
-//     let aux = "";
-//     for(let i=0;i<productosEnCarro.length;i++){
-//         aux =
-//         aux +`
-//         <article style="border: 1px solid green">
-//         <h3>${productosEnCarro[i].nombre}</h3>
-//         <p>$: ${productosEnCarro[i].precio}</p>
-//         <p>id: ${productosEnCarro[i].id}</p>
-//         <p onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</p>
-//         </article>
-//         `;
-//     }
-//     document.getElementById("tablaxl-Productos").innerHTML = aux;
-// }
-
+//----------------------------------------------------------------
 let ropa = [
     {id:100, nombre:"Sportswear",precio:200},
     {id:101, nombre:"Nsw Photo Tee",precio:180},
@@ -145,29 +129,29 @@ function agregarProductosTabla() {
         <td>${productosEnCarro[i].nombre}</td>
         <td>$: ${productosEnCarro[i].precio}</td>
         <td>id: ${productosEnCarro[i].id}</td>
-        <td>
-        <td id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</td>
-        
+        <td>id: ${productosEnCarro[i].id}</td>
+        <td><button id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</button></td>
         </tr>
         `;
     }
     document.getElementById("tablaxl-Productos").innerHTML = aux;
 }
-
      
-const btn = document.querySelector("#meterAlCarro")
-btn.addEventListener('click', () => {
+//------------------------------------------------------------------------------
 
-    Swal.fire({
-        title: 'Genial!',
-        text: 'Agregaste un producto al carro!',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-})
-})
+// const btn = document.querySelector("#meterAlCarro")
+// btn.addEventListener('click', () => {
+//     Swal.fire({
+//         title: 'Genial!',
+//         text: 'Agregaste un producto al carro!',
+//         icon: 'success',
+//         confirmButtonText: 'Cool'
+// })
+// });
+
 
 // const btn2 = document.querySelector('#borrarDelCarro')
-// btn.addEventListener('click', () => {
+// btn2.addEventListener('click', () => {
 
 //     Swal.fire({
 //         title: 'eliminaste!',
