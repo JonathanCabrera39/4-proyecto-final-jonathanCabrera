@@ -168,28 +168,113 @@ agregarProductosTabla()
         document.getElementById("tablaxl-Productos").innerHTML = aux;
     }
     
-    selecionarColor()
+   // selecionarColor()
     //------------------------------------------------------------------------------
 
-// const btn = document.querySelector("#meterAlCarro")
-// btn.addEventListener('click', () => {
-    //     Swal.fire({
-        //         title: 'Genial!',
-        //         text: 'Agregaste un producto al carro!',
-        //         icon: 'success',
-        //         confirmButtonText: 'Cool'
-        // })
-        // });
-
+let btn = document.querySelector("#meterAlCarro")
+btn.addEventListener('click', () => {
+        Swal.fire({
+            allowOutsideClick:false,
+            title: 'Genial!',
+            text: 'Agregaste un producto al carro!',
+            icon: 'success',
+            confirmButtonText: 'Cool',
+        })
+        });
 
 // const btn2 = document.querySelector('#borrarDelCarro')
 // btn2.addEventListener('click', () => {
 
 //     Swal.fire({
+//         allowOutsideClick:false,
 //         title: 'eliminaste!',
 //         text: 'Borraste un producto al carro!',
 //         icon: 'success',
-//         confirmButtonText: 'Cool'
+//         confirmButtonText: 'Cool',
 // })
-// })
+// });
+
+(async () =>{
+    const {value: pais} = await Swal.fire({
+        title: 'bienvenido!',
+        text: 'difruta de nuetros productos!',
+        html:"<h1> seleccione su pais</h1>",
+        //icon: 'success',
+        confirmButtonText: 'selecionar',
+        footer:'<span class="colores"> esta infomacion es importante </span>',
+        width:'90%',
+        padding: '1rem',
+        background: 'linear-gradient(90deg, rgba(215,143,183,1) 0%, rgba(201,185,241,1) 100%)',
+        //grow:'column'
+        backdrop: 'true',
+        timer:2*5000,
+        timerProgressBar: 'auto',
+        //toast:'true',
+        position:'center',
+        allowOutsideClick:false,
+        allowEscapeKey:false,
+        allowEnterKey:false,
+        stopKeydownPropagation:false,
+    
+        input:'select',
+        inputPlaceholder:'pais',
+        inputValue:'',
+        inputOptions:{
+            mexico:'mexico',
+            españa:'españa',
+            argentina:'argentina',
+        },
+        
+          //customClass:{
+  	        // container:
+        	//popup:"popup-class",
+        	// header:
+        	// title:
+        	// closeButton:
+        	// icon:
+        	// image:
+        	// content:
+        	// input:
+        	// actions:
+        	// confirmButton:
+        	// cancelButton:
+        	// footer:
+          //}
+      	
+    
+        // showConfirmButton:
+        // confirmButtonColor:
+        // confirmButtonAriaLabel:
+    
+        // showCancelButton:
+        // cancelButtonText:
+        // cancelButtonColor:
+        // cancelButtonAriaLabel:
+        
+        // buttonsStyling:
+        // showCloseButton:
+        // closeButtonAriaLabel:
+    
+    
+        // imageUrl:
+        // imageWidth:
+        // imageHeight:
+        // imageAlt:
+    });
+
+    if(pais){
+        Swal.fire({
+            title: `seleccionaste ${pais}`,
+           
+        });
+    }else{
+        Swal.fire({
+            title: `sele acabo el tiempo`,
+        footer:'<span class="colores"> actualize la pagina para seleccionar su pais </span>',
+
+        }); 
+    }
+})()
+
+
 
