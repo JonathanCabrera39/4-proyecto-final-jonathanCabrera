@@ -66,14 +66,14 @@ function agregarProductosTabla() {
     });
 }
 //----------------------------------------------------------------
-let ropa = [
-    {id:100, nombre:"Sportswear",precio:200},
-    {id:101, nombre:"Nsw Photo Tee",precio:180},
-    {id:102, nombre:"ordan Stencil Crew",precio:100},
-    {id:103, nombre:"verace logo",precio:100},
-    {id:103, nombre:"MEDUSA BIGGIE",precio:70},
-    {id:104, nombre:"couture t-shit",precio:122},
-    ];
+// let ropa = [
+//     {id:100, nombre:"Sportswear",precio:200},
+//     {id:101, nombre:"Nsw Photo Tee",precio:180},
+//     {id:102, nombre:"ordan Stencil Crew",precio:100},
+//     {id:103, nombre:"verace logo",precio:100},
+//     {id:103, nombre:"MEDUSA BIGGIE",precio:70},
+//     {id:104, nombre:"couture t-shit",precio:122},
+//     ];
 
 // let color = [
 //     {red:"red", },
@@ -117,28 +117,46 @@ function borrarDelCarro(id){
     agregarProductosTabla()
 }
 
-let productosEnCarro;
 
-function pintarListado(){
-    let aux = "";
-    for(let i=0;i<ropa.length;i++){
-        aux =
-        aux +`
-        <article  style= " border: 1px solid red">
-        <h3>nombre: ${ropa[i].nombre}</h3>
-        <p>$: ${ropa[i].precio}</p>
-        <p>id: ${ropa[i].id}</p>
-        <button id="meterAlCarro" onclick="meterAlCarro({id: ${ropa[i].id},nombre: '${ropa[i].nombre}',precio: ${ropa[i].precio}})">agrerar al carro</button>
-        </article>
-        `;
-    }
-    // console.log(aux);
-    document.getElementById("selecionar-producto").innerHTML = aux;
-}
+// function pintarListado(){
+//     let aux = "";
+//     for(let i=0;i<ropa.length;i++){
+//         aux =
+//         aux +`
+//         <article  style= " border: 1px solid red">
+//         <h3>nombre: ${ropa[i].nombre}</h3>
+//         <p>$: ${ropa[i].precio}</p>
+//         <p>id: ${ropa[i].id}</p>
+//         <button id="meterAlCarro" onclick="meterAlCarro({id: ${ropa[i].id},nombre: '${ropa[i].nombre}',precio: ${ropa[i].precio}})">agrerar al carro</button>
+//         </article>
+//         `;
+//     }
+//     // console.log(aux);
+//     document.getElementById("selecionar-producto").innerHTML = aux;
+// }
+async function pintarListado() {
+    const ropa = await fetch('./data.json')
+     productosEnCarro = await ropa.json();
+        let aux = '';
+        for (let i = 0; i < productosEnCarro.length; i++) {
+          aux =
+            aux +
+            `
+            <article  style= " border: 1px solid red">
+            <p>$: ${productosEnCarro[i].precio}</p>
+            <h3>nombre:${productosEnCarro[i].nombre}</h3>
+                <p>id: ${productosEnCarro[i].id}</p>
+                <button id="meterAlCarro" onclick="meterAlCarro({id: ${productosEnCarro[i].id},nombre: '${productosEnCarro[i].nombre}',precio: ${productosEnCarro[i].precio}})">agrerar al carro</button>
+            </article>
+            `;
+        }
+        document.getElementById('selecionar-producto').innerHTML = aux;
+        console.log(aux);
+      }
 pintarListado()
 
-
 let aux = localStorage.getItem("productosEnCarro");
+let productosEnCarro;
 
 productosEnCarro = (JSON.parse(aux.toString()) || [])
 agregarProductosTabla()
@@ -150,13 +168,32 @@ agregarProductosTabla()
     //    agregarProductosTabla()
     // }
     
-    function agregarProductosTabla() {
-        let aux = "";
-        for(let i=0;i<productosEnCarro.length;i++){
-            aux =
-            aux +`
-            <tr style="border: 1px solid green">
+    // function agregarProductosTabla() {
+    //     let aux = "";
+    //     for(let i=0;i<productosEnCarro.length;i++){
+    //         aux =
+    //         aux +`
+    //         <tr style="border: 1px solid green">
             
+    //         <td>${productosEnCarro[i].nombre}</td>
+    //         <td>$: ${productosEnCarro[i].precio}</td>
+    //         <td>id: ${productosEnCarro[i].id}</td>
+    //         <td>id: ${productosEnCarro[i].id}</td>
+    //         <td><button id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</button></td>
+    //         </tr>
+    //         `;
+    //     }
+    //     document.getElementById("tablaxl-Productos").innerHTML = aux;
+    // }
+    async function agregarProductosTabla() {
+        const ropa = await fetch('./data.json')
+         productosEnCarro = await ropa.json();
+            let aux = '';
+            for (let i = 0; i < productosEnCarro.length; i++) {
+              aux =
+                aux +
+                `
+            <tr style="border: 1px solid green">
             <td>${productosEnCarro[i].nombre}</td>
             <td>$: ${productosEnCarro[i].precio}</td>
             <td>id: ${productosEnCarro[i].id}</td>
@@ -164,23 +201,24 @@ agregarProductosTabla()
             <td><button id="borrarDelCarro" onclick="borrarDelCarro(${[i]})" style="cursor:pointer;">🗑️</button></td>
             </tr>
             `;
-        }
-        document.getElementById("tablaxl-Productos").innerHTML = aux;
-    }
-    
+            }
+            document.getElementById('tablaxl-Productos').innerHTML = aux;
+            console.log(aux);
+          }
+          
    // selecionarColor()
     //------------------------------------------------------------------------------
 
-let btn = document.querySelector("#meterAlCarro")
-btn.addEventListener('click', () => {
-        Swal.fire({
-            allowOutsideClick:false,
-            title: 'Genial!',
-            text: 'Agregaste un producto al carro!',
-            icon: 'success',
-            confirmButtonText: 'Cool',
-        })
-        });
+// let btn = document.querySelector("#meterAlCarro")
+// btn.addEventListener('click', () => {
+//         Swal.fire({
+//             allowOutsideClick:false,
+//             title: 'Genial!',
+//             text: 'Agregaste un producto al carro!',
+//             icon: 'success',
+//             confirmButtonText: 'Cool',
+//         })
+//         });
 
 // const btn2 = document.querySelector('#borrarDelCarro')
 // btn2.addEventListener('click', () => {
