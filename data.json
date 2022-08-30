@@ -1,8 +1,9 @@
-[
-{"id":100, "nombre":"Sportswear","precio":200},
-{"id":101, "nombre":"Nsw Photo Tee","precio":180},
-{"id":102, "nombre":"ordan Stencil Crew","precio":100},
-{"id":104, "nombre":"verace logo","precio":100},
-{"id":105, "nombre":"MEDUSA BIGGIE","precio":70},
-{"id":106, "nombre":"couture t-shit","precio":122}
+ [        
+     {"id":101, "nombre":"JORDAN M J JUMPMAN","precio":100,"img":"remeras/jordan.png"},
+     {"id":102, "nombre":"JORDAN BRAND 5 - Grid","precio":122,"img":"remeras/jordan2.png"},
+     {"id":103, "nombre":"verace logo","precio":100,"img":"remeras/verace logo.png"},
+     {"id":104, "nombre":"Nsw Photo Tee","precio":180,"img":"remeras/nike.png"},
+     {"id":105, "nombre":"Sportswear","precio":200 ,"img":"remeras/nike2.png"},
+    {"id":106, "nombre":"MEDUSA BIGGIE","precio":70,"img":"remeras/veracet.png"}
 ]
+
